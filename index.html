@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Word search game</title>
+    <link rel="stylesheet" href="css/wordsearch.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body style="background-image: url('bg.jpg'); background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;">
+    <div class="wrap">
+      <h2 class="logo">Word Search Game by EB-Edutech</h2>
+      <section id="ws-area"></section>
+      <ul class="ws-words"></ul>
+      </div>
+     <script src="js/utility.min.js"></script>
+    <script src="js/wordsearch.min.js"></script>
+    <script type="text/javascript">
+      var gameAreaEl = document.getElementById('ws-area');
+      var gameobj = gameAreaEl.wordSearch();
+      var words = gameobj.settings.wordsList,
+        wordsWrap = document.querySelector('.ws-words');
+      for (i in words) {
+        var liEl = document.createElement('li');
+        liEl.setAttribute('class', 'ws-word');
+        liEl.innerText = words[i];
+        wordsWrap.appendChild(liEl);
+      }
+    </script>
+    <div style="text-align: center;">
+    <button onclick="location.reload();" style="
+      display: inline-block;
+      padding: 15px 25px;
+      font-size: 24px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #a205e0;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px rgb(238, 222, 240);">Play Again</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button style="
+display: inline-block;
+padding: 15px 25px;
+font-size: 24px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: rgb(12, 11, 11);
+background-color: #f693dd;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px rgb(238, 222, 240);">More Games</button>
+    </div>
+  </body>
+</html>
